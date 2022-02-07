@@ -11,11 +11,19 @@ export class ApartamentoService {
     private readonly apartamentoRepository: Repository<ApartamentoEntity>
   ) {}
 
+  findAll() {
+    return this.apartamentoRepository.find()
+  }
+
   createApartamento(apartamento: Apartamento) {
     return this.apartamentoRepository.save(apartamento)
   }
 
-  findAll() {
-    return this.apartamentoRepository.find()
+  updateApartamento(id: number, apartamento: Apartamento) {
+    return this.apartamentoRepository.update(id, apartamento)
+  }
+
+  deleteApartamento(id: number) {
+    return this.apartamentoRepository.delete(id)
   }
 }
