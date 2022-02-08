@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ApartamentoModule } from './apartamento/apartamento.module';
+import { MoradorModule } from './morador/morador.module';
 
 @Module({
   imports: [
@@ -23,7 +24,8 @@ import { ApartamentoModule } from './apartamento/apartamento.module';
         }
       }
     }),
-    ApartamentoModule
+    ApartamentoModule,
+    MoradorModule
   ],
   controllers: [AppController],
   providers: [AppService],
