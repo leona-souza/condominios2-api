@@ -10,6 +10,11 @@ export class ApartamentoController {
   findAll() {
     return this.apartamentoService.findAll()
   }
+
+  @Get(':id')
+  findById(@Param('id') id: number) {
+    return this.apartamentoService.findById(id)
+  }
   
   @Post()
   create(@Body() apartamento: Apartamento) {

@@ -11,9 +11,14 @@ export class MoradorController {
     return this.moradorService.findAll()
   }
 
-  @Get(':id')
+  @Get('/:id')
   findById(@Param('id') id: number) {
     return this.moradorService.findById(id)
+  }
+
+  @Get('/all')
+  findAllWithRelations() {
+    return this.moradorService.findAllWithRelations()
   }
 
   @Post()

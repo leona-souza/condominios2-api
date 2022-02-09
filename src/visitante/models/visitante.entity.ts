@@ -1,8 +1,8 @@
 import { ApartamentoEntity } from "src/apartamento/models/apartamento.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('morador')
-export class MoradorEntity {
+@Entity('visitante')
+export class VisitanteEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -18,6 +18,6 @@ export class MoradorEntity {
   @Column({ nullable: true })
   obs: string;
 
-  @ManyToOne(() => ApartamentoEntity, apartamento => apartamento.morador)
+  @ManyToOne(() => ApartamentoEntity, apartamento => apartamento.visitante)
   apartamento: ApartamentoEntity;
 }

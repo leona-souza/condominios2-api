@@ -1,23 +1,26 @@
 import { ApartamentoEntity } from "src/apartamento/models/apartamento.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('morador')
-export class MoradorEntity {
+@Entity('veiculo')
+export class VeiculoEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  nome: string;
+  placa: string;
 
   @Column({ nullable: true })
-  documento: string;
+  marca: string;
 
   @Column({ nullable: true })
-  telefone: string;
+  modelo: string;
+
+  @Column({ nullable: true })
+  cor: string;
 
   @Column({ nullable: true })
   obs: string;
 
-  @ManyToOne(() => ApartamentoEntity, apartamento => apartamento.morador)
+  @ManyToOne(() => ApartamentoEntity, apartamento => apartamento.veiculo)
   apartamento: ApartamentoEntity;
 }

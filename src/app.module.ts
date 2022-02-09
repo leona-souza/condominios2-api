@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ApartamentoModule } from './apartamento/apartamento.module';
 import { MoradorModule } from './morador/morador.module';
+import { VeiculoModule } from './veiculo/veiculo.module';
+import { VisitanteModule } from './visitante/visitante.module';
 
 @Module({
   imports: [
@@ -25,7 +27,9 @@ import { MoradorModule } from './morador/morador.module';
       }
     }),
     ApartamentoModule,
-    MoradorModule
+    MoradorModule,
+    VeiculoModule,
+    VisitanteModule
   ],
   controllers: [AppController],
   providers: [AppService],

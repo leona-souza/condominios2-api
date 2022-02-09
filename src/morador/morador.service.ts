@@ -15,8 +15,17 @@ export class MoradorService {
     return this.moradorRepository.find()
   }
 
+  findAllWithRelations() {
+    return this.moradorRepository.find({
+      relations: ['apartamento'],
+    })
+  }
+
   findById(id: number) {
-    return this.moradorRepository.findOne(id)
+    return this.moradorRepository.findOne({
+      where: { id: id },
+      relations: ['apartamento'],
+    })
   }
 
   createMorador(morador: Morador) {

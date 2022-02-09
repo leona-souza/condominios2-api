@@ -15,6 +15,13 @@ export class ApartamentoService {
     return this.apartamentoRepository.find()
   }
 
+  findById(id: number) {
+    return this.apartamentoRepository.findOne({
+      where: { id: id },
+      relations: ['morador', 'veiculo'],
+    })
+  }
+
   createApartamento(apartamento: Apartamento) {
     return this.apartamentoRepository.save(apartamento)
   }
