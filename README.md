@@ -38,7 +38,11 @@ nest g mo 'entity' --no-spec
 nest g s 'entity' --no-spec
 nest g co 'entity' --no-spec
 
-add imports at app.module.ts
+add imports at app.module.ts (if not added automatically)
+add TypeOrm import at entity.module.ts like this:
+imports:[
+  TypeOrmModule.forFeature([Entity])
+],
 ```
 
 ## Running the app

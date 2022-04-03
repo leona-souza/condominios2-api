@@ -2,6 +2,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { MoradorEntity } from "src/morador/models/morador.entity";
 import { VeiculoEntity } from "src/veiculo/models/veiculo.entity";
 import { VisitanteEntity } from "src/visitante/models/visitante.entity";
+import { VisitaEntity } from "src/visita/models/visita.entity";
 
 @Entity('apartamento')
 export class ApartamentoEntity {
@@ -25,4 +26,7 @@ export class ApartamentoEntity {
 
   @OneToMany(() => VisitanteEntity, visitante => visitante.apartamento)
   visitante: VisitanteEntity[];
+
+  @OneToMany(() => VisitaEntity, visita => visita.apartamento)
+  visita: VisitaEntity[];
 }

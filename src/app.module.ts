@@ -7,6 +7,7 @@ import { ApartamentoModule } from './apartamento/apartamento.module';
 import { MoradorModule } from './morador/morador.module';
 import { VeiculoModule } from './veiculo/veiculo.module';
 import { VisitanteModule } from './visitante/visitante.module';
+import { VisitaModule } from './visita/visita.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { VisitanteModule } from './visitante/visitante.module';
     ApartamentoModule,
     MoradorModule,
     VeiculoModule,
-    VisitanteModule
+    VisitanteModule,
+    VisitaModule
   ],
   controllers: [AppController],
   providers: [AppService],
