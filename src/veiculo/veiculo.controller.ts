@@ -11,7 +11,12 @@ export class VeiculoController {
     return this.veiculoService.findAll()
   }
 
-  @Get(':id')
+  @Get('/all')
+  findAllWithRelations() {
+    return this.veiculoService.findAllWithRelations()
+  }
+
+  @Get('/:id')
   findById(@Param('id') id: number) {
     return this.veiculoService.findById(id)
   }
@@ -21,7 +26,7 @@ export class VeiculoController {
     return this.veiculoService.createMorador(morador)
   }
 
-  @Put(':id')
+  @Put('/:id')
   update(
     @Param('id') id: number,
     @Body() morador: Veiculo
@@ -29,7 +34,7 @@ export class VeiculoController {
     return this.veiculoService.updateMorador(id, morador)
   }
 
-  @Delete(':id')
+  @Delete('/:id')
   delete(@Param('id') id: number) {
     return this.veiculoService.deleteMorador(id)
   }

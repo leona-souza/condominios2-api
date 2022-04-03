@@ -11,14 +11,14 @@ export class VisitanteController {
     return this.visitanteService.findAll()
   }
 
-  @Get('/:id')
-  findById(@Param('id') id: number) {
-    return this.visitanteService.findById(id)
-  }
-
   @Get('/all')
   findAllWithRelations() {
     return this.visitanteService.findAllWithRelations()
+  }
+
+  @Get('/:id')
+  findById(@Param('id') id: number) {
+    return this.visitanteService.findById(id)
   }
 
   @Post()
@@ -26,7 +26,7 @@ export class VisitanteController {
     return this.visitanteService.createVisitante(visitante)
   }
 
-  @Put(':id')
+  @Put('/:id')
   update(
     @Param('id') id: number,
     @Body() visitante: Visitante
@@ -34,7 +34,7 @@ export class VisitanteController {
     return this.visitanteService.updateVisitante(id, visitante)
   }
 
-  @Delete(':id')
+  @Delete('/:id')
   delete(@Param('id') id: number) {
     return this.visitanteService.deleteVisitante(id)
   }

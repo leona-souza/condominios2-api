@@ -15,6 +15,12 @@ export class VeiculoService {
     return this.veiculoRepository.find()
   }
 
+  findAllWithRelations() {
+    return this.veiculoRepository.find({
+      relations: ['apartamento']
+    })
+  }
+
   findById(id: number) {
     return this.veiculoRepository.findOne({
       where: { id: id },
