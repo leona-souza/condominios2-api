@@ -32,6 +32,15 @@
 $ npm install
 ```
 
+## New module
+```
+nest g mo 'entity' --no-spec
+nest g s 'entity' --no-spec
+nest g co 'entity' --no-spec
+
+add imports at app.module.ts
+```
+
 ## Running the app
 
 ```bash
