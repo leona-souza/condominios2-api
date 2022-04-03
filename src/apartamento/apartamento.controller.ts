@@ -11,7 +11,12 @@ export class ApartamentoController {
     return this.apartamentoService.findAll()
   }
 
-  @Get(':id')
+  @Get('/all')
+  findAllWithRelations() {
+    return this.apartamentoService.findAllWithRelations()
+  }
+
+  @Get('/:id')
   findById(@Param('id') id: number) {
     return this.apartamentoService.findById(id)
   }

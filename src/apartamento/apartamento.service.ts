@@ -15,10 +15,24 @@ export class ApartamentoService {
     return this.apartamentoRepository.find()
   }
 
+  findAllWithRelations() {
+    return this.apartamentoRepository.find({
+      relations: [
+        'morador',
+        'veiculo',
+        'visitante'
+      ],
+    })
+  }
+
   findById(id: number) {
     return this.apartamentoRepository.findOne({
       where: { id: id },
-      relations: ['morador', 'veiculo'],
+      relations: [
+        'morador',
+        'veiculo',
+        'visitante'
+      ],
     })
   }
 
