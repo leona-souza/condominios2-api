@@ -8,11 +8,6 @@ export class VisitaController {
 
   @Get()
   findAll() {
-    return this.visitaService.findAll()
-  }
-
-  @Get('/all')
-  findAllWithRelations() {
     return this.visitaService.findAllWithRelations()
   }
 
